@@ -1,0 +1,18 @@
+{
+  "name": "virtual-arithmetic-proficiency-test",
+  "version": "0.1.0",
+  "private": true,
+  "description": "公益財団法人 日本子供算数検定 — モノレポプロジェクト",
+  "scripts": {
+    "dev:homepage": "pnpm --filter homepage dev",
+    "build:homepage": "pnpm --filter homepage build",
+    "dev:exam": "pnpm --filter exam dev",
+    "build:exam": "pnpm --filter exam build",
+    "dev:ec-site": "pnpm --filter ec-site dev",
+    "build:ec-site": "pnpm --filter ec-site build"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "pnpm@10.23.0"
+}
