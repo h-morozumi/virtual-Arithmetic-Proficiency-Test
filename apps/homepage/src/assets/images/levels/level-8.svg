@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <defs>
+    <linearGradient id="bg8" x1="0" y1="0" x2="400" y2="300" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f9fbe7"/>
+      <stop offset="1" stop-color="#f0f4c3"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" rx="24" fill="url(#bg8)"/>
+  <!-- 筆算の縦書き -->
+  <rect x="120" y="50" width="160" height="200" rx="16" fill="#fff" stroke="#cddc39" stroke-width="2"/>
+  <text x="240" y="100" text-anchor="end" fill="#33691e" font-size="32" font-weight="bold" font-family="monospace">  28</text>
+  <text x="148" y="140" fill="#33691e" font-size="32" font-weight="bold" font-family="monospace">+</text>
+  <text x="240" y="140" text-anchor="end" fill="#33691e" font-size="32" font-weight="bold" font-family="monospace">  15</text>
+  <line x1="140" y1="155" x2="260" y2="155" stroke="#33691e" stroke-width="3"/>
+  <text x="240" y="195" text-anchor="end" fill="#7cb342" font-size="32" font-weight="bold" font-family="monospace">  43</text>
+  <!-- くり上がりマーク -->
+  <text x="185" y="80" fill="#e53935" font-size="16" font-weight="bold" font-family="sans-serif">¹</text>
+  <!-- 矢印 -->
+  <path d="M 310 120 Q 340 90 330 140" stroke="#7cb342" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <text x="345" y="130" fill="#7cb342" font-size="14" font-weight="600" font-family="sans-serif">くり上がり</text>
+  <text x="200" y="280" text-anchor="middle" fill="#33691e" font-size="16" font-weight="600" font-family="sans-serif">くり上がり・くり下がり</text>
+</svg>

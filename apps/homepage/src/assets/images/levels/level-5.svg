@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <defs>
+    <linearGradient id="bg5" x1="0" y1="0" x2="400" y2="300" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#e8eaf6"/>
+      <stop offset="1" stop-color="#c5cae9"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" rx="24" fill="url(#bg5)"/>
+  <!-- 割合の円グラフ -->
+  <circle cx="120" cy="130" r="60" fill="#e8eaf6" stroke="#5c6bc0" stroke-width="2"/>
+  <path d="M 120 130 L 120 70 A 60 60 0 0 1 172 157 Z" fill="#3f51b5" opacity="0.8"/>
+  <text x="145" y="115" fill="#fff" font-size="16" font-weight="bold" font-family="sans-serif">40%</text>
+  <text x="100" y="165" fill="#3949ab" font-size="12" font-family="sans-serif">60%</text>
+  <!-- 図形面積 -->
+  <rect x="220" y="80" width="100" height="70" rx="4" fill="none" stroke="#3f51b5" stroke-width="2.5" stroke-dasharray="6 3"/>
+  <!-- 幅と高さ -->
+  <text x="270" y="75" text-anchor="middle" fill="#283593" font-size="14" font-weight="600" font-family="sans-serif">10 cm</text>
+  <text x="335" y="120" text-anchor="start" fill="#283593" font-size="14" font-weight="600" font-family="sans-serif">7 cm</text>
+  <text x="270" y="125" text-anchor="middle" fill="#3f51b5" font-size="16" font-weight="bold" font-family="sans-serif">面積 = 70 cm²</text>
+  <!-- 三角形 -->
+  <polygon points="80,250 170,250 125,200" fill="none" stroke="#5c6bc0" stroke-width="2.5"/>
+  <text x="125" y="270" text-anchor="middle" fill="#283593" font-size="12" font-family="sans-serif">底辺 × 高さ ÷ 2</text>
+  <!-- 割合の式 -->
+  <rect x="210" y="200" width="160" height="50" rx="12" fill="#fff" stroke="#7986cb" stroke-width="1.5"/>
+  <text x="290" y="222" text-anchor="middle" fill="#283593" font-size="14" font-weight="600" font-family="sans-serif">くらべる量</text>
+  <text x="290" y="240" text-anchor="middle" fill="#5c6bc0" font-size="12" font-family="sans-serif">＝ もとにする量 × 割合</text>
+  <text x="200" y="290" text-anchor="middle" fill="#283593" font-size="16" font-weight="600" font-family="sans-serif">割合・図形の面積</text>
+</svg>
