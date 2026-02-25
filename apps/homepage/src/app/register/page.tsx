@@ -6,10 +6,11 @@ import Link from "next/link";
 import { useAuth } from "@/contexts/AuthContext";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
+import FullScreenMessage from "@/components/FullScreenMessage";
 
 export default function RegisterPage() {
   return (
-    <Suspense>
+    <Suspense fallback={<FullScreenMessage />}>
       <RegisterContent />
     </Suspense>
   );
@@ -39,11 +40,7 @@ function RegisterContent() {
   }, [user, done, redirect, router]);
 
   if (user && !done) {
-    return (
-      <div className="flex min-h-screen items-center justify-center">
-        <div className="text-gray-400">リダイレクト中…</div>
-      </div>
-    );
+    return <FullScreenMessage message="リダイレクト中…" />;
   }
 
   const update = (key: string, value: string) =>
@@ -130,11 +127,11 @@ function RegisterContent() {
               </p>
             </div>
 
-            {error && (
+            {error ? (
               <div className="mt-4 rounded-lg bg-red-50 p-3 text-center text-sm text-red-600">
                 {error}
               </div>
-            )}
+            ) : null}
 
             <form onSubmit={handleSubmit} className="mt-6 space-y-4">
               <div>

@@ -42,6 +42,12 @@ type AuthContextType = {
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 const STORAGE_KEY = "auth_user";
+const STORAGE_VERSION = 1;
+
+type StoredAuth = {
+  version: number;
+  user: User;
+};
 
 /* ── Provider ── */
 export function AuthProvider({ children }: { children: ReactNode }) {
@@ -51,8 +57,16 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   // 初回マウント時に localStorage から復元
   useEffect(() => {
     try {
-      const stored = localStorage.getItem(STORAGE_KEY);
-      if (stored) setUser(JSON.parse(stored));
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (raw) {
+        const stored: StoredAuth = JSON.parse(raw);
+        if (stored.version === STORAGE_VERSION) {
+          setUser(stored.user);
+        } else {
+          // スキーマ不一致 → 破棄
+          localStorage.removeItem(STORAGE_KEY);
+        }
+      }
     } catch {
       /* ignore */
     }
@@ -67,7 +81,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       if (!found) return { ok: false, error: "ユーザーIDまたはパスワードが正しくありません" };
       const { password: _, ...userData } = found;
       setUser(userData);
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(userData));
+      localStorage.setItem(
+        STORAGE_KEY,
+        JSON.stringify({ version: STORAGE_VERSION, user: userData }),
+      );
       return { ok: true };
     },
     []
@@ -87,7 +104,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       DUMMY_USERS.push(newUser);
       const { password: _, ...userData } = newUser;
       setUser(userData);
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(userData));
+      localStorage.setItem(
+        STORAGE_KEY,
+        JSON.stringify({ version: STORAGE_VERSION, user: userData }),
+      );
       return { ok: true };
     },
     []

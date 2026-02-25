@@ -260,7 +260,7 @@ export default function HomePage() {
                   </div>
                 </div>
 
-                {s.status === "受付中" && (
+                {s.status === "受付中" ? (
                   <div className="mt-6">
                     <ApplyButton
                       className="inline-block rounded-lg bg-primary px-6 py-2.5 text-sm font-bold text-white shadow-sm transition hover:bg-primary-dark"
@@ -268,7 +268,7 @@ export default function HomePage() {
                       この回に申し込む
                     </ApplyButton>
                   </div>
-                )}
+                ) : null}
               </div>
             ))}
           </div>

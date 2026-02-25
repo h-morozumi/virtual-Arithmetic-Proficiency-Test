@@ -6,10 +6,11 @@ import Link from "next/link";
 import { useAuth } from "@/contexts/AuthContext";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
+import FullScreenMessage from "@/components/FullScreenMessage";
 
 export default function LoginPage() {
   return (
-    <Suspense>
+    <Suspense fallback={<FullScreenMessage />}>
       <LoginContent />
     </Suspense>
   );
@@ -33,11 +34,7 @@ function LoginContent() {
   }, [user, redirect, router]);
 
   if (user) {
-    return (
-      <div className="flex min-h-screen items-center justify-center">
-        <div className="text-gray-400">リダイレクト中…</div>
-      </div>
-    );
+    return <FullScreenMessage message="リダイレクト中…" />;
   }
 
   const handleSubmit = (e: FormEvent) => {
@@ -67,11 +64,11 @@ function LoginContent() {
             </div>
 
             {/* エラー */}
-            {error && (
+            {error ? (
               <div className="mt-4 rounded-lg bg-red-50 p-3 text-center text-sm text-red-600">
                 {error}
               </div>
-            )}
+            ) : null}
 
             {/* フォーム */}
             <form onSubmit={handleSubmit} className="mt-6 space-y-5">

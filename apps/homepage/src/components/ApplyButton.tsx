@@ -1,27 +1,22 @@
-"use client";
-
-import { useAuth } from "@/contexts/AuthContext";
 import Link from "next/link";
 
 type Props = {
   className?: string;
   children: React.ReactNode;
-  /** 申し込み後のリダイレクト先（デフォルト /mypage） */
-  redirect?: string;
+  /** リンク先（デフォルト /mypage — 未ログインなら mypage 側でログインへリダイレクト） */
+  href?: string;
 };
 
-/** ログイン済みならマイページ、未ログインならログイン画面へ誘導 */
+/**
+ * 検定申し込みボタン（Server Component）。
+ * 認証状態を参照しないため、クライアントバンドルに含まれません。
+ * 未ログイン時は遷移先の認証ガードがログインページへリダイレクトします。
+ */
 export default function ApplyButton({
   className,
   children,
-  redirect = "/mypage",
+  href = "/mypage",
 }: Props) {
-  const { user } = useAuth();
-
-  const href = user
-    ? redirect
-    : `/login?redirect=${encodeURIComponent(redirect)}`;
-
   return (
     <Link href={href} className={className}>
       {children}

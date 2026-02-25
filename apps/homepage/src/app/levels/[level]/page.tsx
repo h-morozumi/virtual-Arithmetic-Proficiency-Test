@@ -76,6 +76,7 @@ export default async function LevelPage({ params }: Props) {
               src={data.image}
               alt={`${data.label}のイラスト`}
               className="rounded-2xl shadow-2xl"
+              sizes="(max-width: 768px) 100vw, 384px"
               priority
             />
           </div>

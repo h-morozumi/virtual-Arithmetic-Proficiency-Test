@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useAuth } from "@/contexts/AuthContext";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
+import FullScreenMessage from "@/components/FullScreenMessage";
 
 export default function MyPage() {
   const { user, isLoading, logout } = useAuth();
@@ -20,11 +21,7 @@ export default function MyPage() {
 
   // ロード中 or 未ログイン（リダイレクト待ち）
   if (isLoading || !user) {
-    return (
-      <div className="flex min-h-screen items-center justify-center">
-        <div className="text-gray-400">読み込み中…</div>
-      </div>
-    );
+    return <FullScreenMessage />;
   }
 
   const handleLogout = () => {
