@@ -2,6 +2,7 @@ import Link from "next/link";
 import { levels } from "@/data/levels";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
+import ApplyButton from "@/components/ApplyButton";
 
 const features = [
   {
@@ -113,12 +114,11 @@ export default function HomePage() {
             学習意欲と自信を育てる検定試験です。
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-            <a
-              href="#apply"
+            <ApplyButton
               className="rounded-xl bg-primary px-8 py-3.5 text-base font-bold text-white shadow-lg shadow-primary/25 transition hover:-translate-y-0.5 hover:bg-primary-dark hover:shadow-xl"
             >
               検定に申し込む
-            </a>
+            </ApplyButton>
             <a
               href="#about"
               className="rounded-xl border-2 border-primary/20 bg-white/60 px-8 py-3.5 text-base font-bold text-primary backdrop-blur transition hover:border-primary/40 hover:bg-white"
@@ -262,12 +262,11 @@ export default function HomePage() {
 
                 {s.status === "受付中" && (
                   <div className="mt-6">
-                    <a
-                      href="#apply"
+                    <ApplyButton
                       className="inline-block rounded-lg bg-primary px-6 py-2.5 text-sm font-bold text-white shadow-sm transition hover:bg-primary-dark"
                     >
                       この回に申し込む
-                    </a>
+                    </ApplyButton>
                   </div>
                 )}
               </div>
@@ -320,12 +319,11 @@ export default function HomePage() {
           <p className="mx-auto mt-4 max-w-xl text-blue-100">
             まずは実力にあった級を選んで、チャレンジしてみましょう。
           </p>
-          <a
-            href="#apply"
+          <ApplyButton
             className="mt-8 inline-block rounded-xl bg-white px-10 py-4 text-base font-bold text-primary shadow-lg transition hover:-translate-y-0.5 hover:shadow-xl"
           >
             検定に申し込む
-          </a>
+          </ApplyButton>
         </div>
       </section>
 

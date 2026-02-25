@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import { levels, getLevelById } from "@/data/levels";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
+import ApplyButton from "@/components/ApplyButton";
 
 /* ── 静的パラメータ生成 ── */
 export function generateStaticParams() {
@@ -221,12 +222,11 @@ export default async function LevelPage({ params }: Props) {
             まずは練習問題で力試し。準備ができたら検定に申し込みましょう。
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <a
-              href="#apply"
+            <ApplyButton
               className="rounded-xl bg-white px-8 py-3.5 text-base font-bold text-gray-900 shadow-lg transition hover:-translate-y-0.5 hover:shadow-xl"
             >
               検定に申し込む
-            </a>
+            </ApplyButton>
             <Link
               href="/"
               className="rounded-xl border-2 border-white/30 px-8 py-3.5 text-base font-bold text-white backdrop-blur transition hover:border-white/60 hover:bg-white/10"

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import AuthNav from "@/components/AuthNav";
 
 export default function SiteHeader() {
   return (
@@ -27,12 +28,7 @@ export default function SiteHeader() {
           <Link href="/#faq" className="transition hover:text-primary">
             よくある質問
           </Link>
-          <Link
-            href="/mypage"
-            className="rounded-lg bg-primary px-4 py-2 text-white shadow-sm transition hover:bg-primary-dark"
-          >
-            マイページ
-          </Link>
+          <AuthNav />
         </nav>
       </div>
     </header>
