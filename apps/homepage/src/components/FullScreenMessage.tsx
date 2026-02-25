@@ -7,8 +7,8 @@ export default function FullScreenMessage({
   message = "読み込み中…",
 }: Props) {
   return (
-    <div className="flex min-h-screen items-center justify-center">
-      <div className="text-gray-400">{message}</div>
+    <div className="flex min-h-screen items-center justify-center" role="status" aria-live="polite">
+      <div className="text-placeholder">{message}</div>
     </div>
   );
 }

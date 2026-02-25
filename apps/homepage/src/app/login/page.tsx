@@ -52,20 +52,20 @@ function LoginContent() {
     <div className="flex min-h-screen flex-col">
       <SiteHeader />
 
-      <main className="flex flex-1 items-center justify-center bg-gradient-to-br from-blue-50 via-indigo-50 to-violet-100 px-4 py-16">
+      <main className="flex flex-1 items-center justify-center bg-gradient-to-br from-page-gradient-from via-page-gradient-via to-page-gradient-to px-4 py-16">
         <div className="w-full max-w-md">
-          <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-xl">
+          <div className="rounded-2xl border border-border bg-surface p-8 shadow-xl">
             {/* タイトル */}
             <div className="text-center">
-              <h1 className="text-2xl font-bold text-gray-900">ログイン</h1>
-              <p className="mt-2 text-sm text-gray-500">
+              <h1 className="text-2xl font-bold text-foreground">ログイン</h1>
+              <p className="mt-2 text-sm text-muted">
                 ユーザーIDとパスワードを入力してください
               </p>
             </div>
 
             {/* エラー */}
             {error ? (
-              <div className="mt-4 rounded-lg bg-red-50 p-3 text-center text-sm text-red-600">
+              <div className="mt-4 rounded-lg bg-destructive-light p-3 text-center text-sm text-destructive" role="alert">
                 {error}
               </div>
             ) : null}
@@ -75,7 +75,7 @@ function LoginContent() {
               <div>
                 <label
                   htmlFor="userId"
-                  className="block text-sm font-medium text-gray-700"
+                  className="block text-sm font-medium text-foreground-secondary"
                 >
                   ユーザーID
                 </label>
@@ -85,7 +85,7 @@ function LoginContent() {
                   required
                   value={userId}
                   onChange={(e) => setUserId(e.target.value)}
-                  className="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-2.5 text-gray-900 shadow-sm transition focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none"
+                  className="mt-1 block w-full rounded-lg border border-input px-4 py-2.5 text-foreground shadow-sm transition focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/20 focus-visible:outline-none"
                   placeholder="testuser"
                 />
               </div>
@@ -93,7 +93,7 @@ function LoginContent() {
               <div>
                 <label
                   htmlFor="password"
-                  className="block text-sm font-medium text-gray-700"
+                  className="block text-sm font-medium text-foreground-secondary"
                 >
                   パスワード
                 </label>
@@ -103,30 +103,30 @@ function LoginContent() {
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-2.5 text-gray-900 shadow-sm transition focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none"
+                  className="mt-1 block w-full rounded-lg border border-input px-4 py-2.5 text-foreground shadow-sm transition focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/20 focus-visible:outline-none"
                   placeholder="password123"
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full rounded-lg bg-primary px-4 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-primary-dark"
+                className="w-full rounded-lg bg-primary px-4 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-primary-dark focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2 focus-visible:outline-none"
               >
                 ログイン
               </button>
             </form>
 
             {/* テスト情報 */}
-            <div className="mt-5 rounded-lg bg-gray-50 p-4 text-xs text-gray-500">
-              <p className="font-semibold text-gray-600">テスト用アカウント</p>
+            <div className="mt-5 rounded-lg bg-background-alt p-4 text-xs text-muted">
+              <p className="font-semibold text-muted-foreground">テスト用アカウント</p>
               <p className="mt-1">
-                ID: <code className="rounded bg-gray-200 px-1.5 py-0.5">testuser</code>
-                　パスワード: <code className="rounded bg-gray-200 px-1.5 py-0.5">password123</code>
+                ID: <code className="rounded bg-code-bg px-1.5 py-0.5">testuser</code>
+                　パスワード: <code className="rounded bg-code-bg px-1.5 py-0.5">password123</code>
               </p>
             </div>
 
             {/* 登録リンク */}
-            <p className="mt-6 text-center text-sm text-gray-500">
+            <p className="mt-6 text-center text-sm text-muted">
               アカウントをお持ちでない方は
               <Link
                 href={`/register${redirect !== "/mypage" ? `?redirect=${encodeURIComponent(redirect)}` : ""}`}

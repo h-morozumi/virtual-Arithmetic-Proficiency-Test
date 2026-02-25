@@ -33,32 +33,32 @@ export default function MyPage() {
     <div className="flex min-h-screen flex-col">
       <SiteHeader />
 
-      <main className="flex-1 bg-gray-50 py-12 sm:py-16">
+      <main className="flex-1 bg-background-alt py-12 sm:py-16">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           {/* ── プロフィール カード ── */}
-          <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm sm:p-8">
+          <div className="rounded-2xl border border-border bg-surface p-6 shadow-sm sm:p-8">
             <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-center">
               {/* アバター */}
-              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent text-3xl font-bold text-white shadow-lg">
+              <div className="flex size-20 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent text-3xl font-bold text-white shadow-lg">
                 {user.name.charAt(0)}
               </div>
               <div className="flex-1">
-                <h1 className="text-2xl font-bold text-gray-900">
+                <h1 className="text-2xl font-bold text-foreground">
                   {user.name}
-                  <span className="ml-2 text-base font-normal text-gray-400">
+                  <span className="ml-2 text-base font-normal text-placeholder">
                     さん
                   </span>
                 </h1>
-                <p className="mt-1 text-sm text-gray-500">
+                <p className="mt-1 text-sm text-muted">
                   ユーザーID: {user.id}
                 </p>
-                <p className="text-sm text-gray-500">
+                <p className="text-sm text-muted">
                   メール: {user.email}
                 </p>
               </div>
               <button
                 onClick={handleLogout}
-                className="rounded-lg border border-gray-300 px-5 py-2 text-sm font-medium text-gray-600 transition hover:border-red-300 hover:text-red-600"
+                className="rounded-lg border border-input px-5 py-2 text-sm font-medium text-muted-foreground transition hover:border-destructive-border hover:text-destructive focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2 focus-visible:outline-none"
               >
                 ログアウト
               </button>
@@ -67,10 +67,10 @@ export default function MyPage() {
 
           {/* ── 受験状況 ── */}
           <section className="mt-8">
-            <h2 className="text-lg font-bold text-gray-900">受験状況</h2>
-            <div className="mt-4 rounded-2xl border border-dashed border-gray-300 bg-white p-10 text-center">
+            <h2 className="text-lg font-bold text-foreground">受験状況</h2>
+            <div className="mt-4 rounded-2xl border border-dashed border-input bg-surface p-10 text-center">
               <div className="text-4xl">📋</div>
-              <p className="mt-3 text-gray-500">
+              <p className="mt-3 text-muted">
                 まだ受験の申し込みがありません
               </p>
               <Link
@@ -84,10 +84,10 @@ export default function MyPage() {
 
           {/* ── 成績一覧 ── */}
           <section className="mt-8">
-            <h2 className="text-lg font-bold text-gray-900">成績一覧</h2>
-            <div className="mt-4 rounded-2xl border border-dashed border-gray-300 bg-white p-10 text-center">
+            <h2 className="text-lg font-bold text-foreground">成績一覧</h2>
+            <div className="mt-4 rounded-2xl border border-dashed border-input bg-surface p-10 text-center">
               <div className="text-4xl">📊</div>
-              <p className="mt-3 text-gray-500">
+              <p className="mt-3 text-muted">
                 まだ成績データがありません
               </p>
             </div>
@@ -95,10 +95,10 @@ export default function MyPage() {
 
           {/* ── 合格証 ── */}
           <section className="mt-8">
-            <h2 className="text-lg font-bold text-gray-900">合格証</h2>
-            <div className="mt-4 rounded-2xl border border-dashed border-gray-300 bg-white p-10 text-center">
+            <h2 className="text-lg font-bold text-foreground">合格証</h2>
+            <div className="mt-4 rounded-2xl border border-dashed border-input bg-surface p-10 text-center">
               <div className="text-4xl">🏆</div>
-              <p className="mt-3 text-gray-500">
+              <p className="mt-3 text-muted">
                 合格証はまだ発行されていません
               </p>
             </div>
@@ -108,28 +108,28 @@ export default function MyPage() {
           <section className="mt-8 grid gap-4 sm:grid-cols-3">
             <Link
               href="/#schedule"
-              className="rounded-2xl border border-gray-200 bg-white p-5 text-center transition hover:border-primary/30 hover:shadow-md"
+              className="rounded-2xl border border-border bg-surface p-5 text-center transition hover:border-primary/30 hover:shadow-md"
             >
               <div className="text-2xl">🗓️</div>
-              <p className="mt-2 text-sm font-semibold text-gray-700">
+              <p className="mt-2 text-sm font-semibold text-foreground-secondary">
                 試験日程
               </p>
             </Link>
             <Link
               href="/#levels"
-              className="rounded-2xl border border-gray-200 bg-white p-5 text-center transition hover:border-primary/30 hover:shadow-md"
+              className="rounded-2xl border border-border bg-surface p-5 text-center transition hover:border-primary/30 hover:shadow-md"
             >
               <div className="text-2xl">📐</div>
-              <p className="mt-2 text-sm font-semibold text-gray-700">
+              <p className="mt-2 text-sm font-semibold text-foreground-secondary">
                 検定級一覧
               </p>
             </Link>
             <Link
               href="/#faq"
-              className="rounded-2xl border border-gray-200 bg-white p-5 text-center transition hover:border-primary/30 hover:shadow-md"
+              className="rounded-2xl border border-border bg-surface p-5 text-center transition hover:border-primary/30 hover:shadow-md"
             >
               <div className="text-2xl">❓</div>
-              <p className="mt-2 text-sm font-semibold text-gray-700">
+              <p className="mt-2 text-sm font-semibold text-foreground-secondary">
                 よくある質問
               </p>
             </Link>

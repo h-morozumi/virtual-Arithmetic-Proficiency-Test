@@ -1,11 +1,70 @@
 @import "tailwindcss";
 
 @theme {
+  /* Typography */
   --font-sans: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP",
     "Yu Gothic", sans-serif;
+  --font-size-caption: 0.65rem;
+
+  /* Brand */
   --color-primary: #2563eb;
   --color-primary-dark: #1d4ed8;
+  --color-primary-light: #dbeafe;
   --color-accent: #7c3aed;
+
+  /* Surfaces */
+  --color-background: #ffffff;
+  --color-background-alt: #f9fafb;
   --color-surface: #ffffff;
-  --color-muted: #64748b;
+
+  /* Foreground */
+  --color-foreground: #111827;
+  --color-foreground-secondary: #374151;
+  --color-muted: #6b7280;
+  --color-muted-foreground: #4b5563;
+  --color-placeholder: #9ca3af;
+
+  /* Borders */
+  --color-border: #e5e7eb;
+  --color-border-light: #f3f4f6;
+  --color-input: #d1d5db;
+  --color-ring: #2563eb;
+
+  /* Status */
+  --color-destructive: #dc2626;
+  --color-destructive-light: #fef2f2;
+  --color-destructive-border: #fca5a5;
+  --color-success: #15803d;
+  --color-success-light: #dcfce7;
+
+  /* Footer */
+  --color-footer: #111827;
+  --color-footer-foreground: #9ca3af;
+  --color-footer-link: #d1d5db;
+  --color-footer-muted: #6b7280;
+
+  /* UI Components */
+  --color-skeleton: #e5e7eb;
+  --color-code-bg: #e5e7eb;
+  --color-badge: #f3f4f6;
+
+  /* Page gradient (hero / auth background) */
+  --color-page-gradient-from: #eff6ff;
+  --color-page-gradient-via: #eef2ff;
+  --color-page-gradient-to: #ede9fe;
+  --color-blob-primary: #bfdbfe;
+  --color-blob-accent: #ddd6fe;
+
+  /* Success gradient */
+  --color-success-gradient-from: #f0fdf4;
+  --color-success-gradient-via: #ecfdf5;
+  --color-success-gradient-to: #ccfbf1;
+}
+
+/* Global focus-visible ring for all interactive elements */
+@layer base {
+  :focus-visible {
+    outline: 2px solid var(--color-ring);
+    outline-offset: 2px;
+  }
 }

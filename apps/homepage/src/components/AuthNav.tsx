@@ -8,7 +8,7 @@ export default function AuthNav() {
 
   if (isLoading) {
     return (
-      <span className="h-8 w-20 animate-pulse rounded-lg bg-gray-200" />
+      <span className="h-8 w-20 animate-pulse rounded-lg bg-skeleton" aria-hidden="true" />
     );
   }
 
@@ -18,7 +18,7 @@ export default function AuthNav() {
         href="/mypage"
         className="flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-white shadow-sm transition hover:bg-primary-dark"
       >
-        <span className="flex h-5 w-5 items-center justify-center rounded-full bg-white/20 text-xs font-bold">
+        <span className="flex size-5 items-center justify-center rounded-full bg-white/20 text-xs font-bold">
           {user.name.charAt(0)}
         </span>
         マイページ

@@ -93,23 +93,23 @@ export default function HomePage() {
       <SiteHeader />
 
       {/* ── ヒーロー ── */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-indigo-50 to-violet-100">
+      <section className="relative overflow-hidden bg-gradient-to-br from-page-gradient-from via-page-gradient-via to-page-gradient-to">
         {/* 装飾的な背景要素 */}
-        <div className="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-blue-200/30 blur-3xl" />
-        <div className="absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-violet-200/30 blur-3xl" />
+        <div className="absolute -top-24 -right-24 size-96 rounded-full bg-blob-primary/30 blur-3xl" />
+        <div className="absolute -bottom-32 -left-32 size-96 rounded-full bg-blob-accent/30 blur-3xl" />
 
         <div className="relative mx-auto max-w-4xl px-4 py-24 text-center sm:py-32 lg:py-40">
           <p className="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1 text-sm font-semibold text-primary">
             2026年度 第1回検定 受付中
           </p>
-          <h2 className="text-4xl font-extrabold leading-tight tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
+          <h2 className="text-4xl font-extrabold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl">
             算数の力を、
             <br />
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               確かな自信に。
             </span>
           </h2>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-gray-500">
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted">
             日本子供算数検定は、お子さまの算数力を正しく測り、
             学習意欲と自信を育てる検定試験です。
           </p>
@@ -130,16 +130,16 @@ export default function HomePage() {
       </section>
 
       {/* ── 特徴セクション ── */}
-      <section id="about" className="bg-white py-20 sm:py-28">
+      <section id="about" className="bg-surface py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <p className="text-sm font-semibold tracking-widest text-primary uppercase">
               About
             </p>
-            <h2 className="mt-2 text-3xl font-bold text-gray-900 sm:text-4xl">
+            <h2 className="mt-2 text-3xl font-bold text-foreground sm:text-4xl">
               検定について
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-gray-500">
+            <p className="mx-auto mt-4 max-w-2xl text-muted">
               日本子供算数検定は、幼児から小学6年生までを対象とした算数の検定試験です。
               お子さまの学習段階に合わせた級を設定し、合格を通じて達成感と学ぶ喜びを提供します。
             </p>
@@ -149,13 +149,13 @@ export default function HomePage() {
             {features.map((f) => (
               <div
                 key={f.title}
-                className="group rounded-2xl border border-gray-100 bg-gray-50/50 p-8 transition hover:border-primary/20 hover:shadow-lg hover:shadow-primary/5"
+                className="group rounded-2xl border border-border-light bg-background-alt/50 p-8 transition hover:border-primary/20 hover:shadow-lg hover:shadow-primary/5"
               >
                 <span className="text-4xl">{f.icon}</span>
-                <h3 className="mt-4 text-lg font-bold text-gray-900">
+                <h3 className="mt-4 text-lg font-bold text-foreground">
                   {f.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-gray-500">
+                <p className="mt-2 text-sm leading-relaxed text-muted">
                   {f.desc}
                 </p>
               </div>
@@ -165,13 +165,13 @@ export default function HomePage() {
       </section>
 
       {/* ── 検定級一覧 ── */}
-      <section id="levels" className="bg-gray-50 py-20 sm:py-28">
+      <section id="levels" className="bg-background-alt py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <p className="text-sm font-semibold tracking-widest text-primary uppercase">
               Levels
             </p>
-            <h2 className="mt-2 text-3xl font-bold text-gray-900 sm:text-4xl">
+            <h2 className="mt-2 text-3xl font-bold text-foreground sm:text-4xl">
               検定級一覧
             </h2>
           </div>
@@ -181,7 +181,7 @@ export default function HomePage() {
               <Link
                 key={item.label}
                 href={`/levels/${item.id}`}
-                className="group relative overflow-hidden rounded-2xl border border-white bg-white p-6 text-center shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+                className="group relative overflow-hidden rounded-2xl border border-surface bg-surface p-6 text-center shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
               >
                 {/* グラデーションアクセント */}
                 <div
@@ -192,10 +192,10 @@ export default function HomePage() {
                 >
                   {item.label}
                 </span>
-                <p className="mt-3 text-base font-semibold text-gray-900">
+                <p className="mt-3 text-base font-semibold text-foreground">
                   {item.target}
                 </p>
-                <p className="mt-1 text-sm text-gray-500">{item.tagline}</p>
+                <p className="mt-1 text-sm text-muted">{item.tagline}</p>
                 <span className="mt-3 inline-block text-xs font-medium text-primary opacity-0 transition group-hover:opacity-100">
                   詳しく見る →
                 </span>
@@ -206,16 +206,16 @@ export default function HomePage() {
       </section>
 
       {/* ── 試験日程 ── */}
-      <section id="schedule" className="bg-white py-20 sm:py-28">
+      <section id="schedule" className="bg-surface py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <p className="text-sm font-semibold tracking-widest text-primary uppercase">
               Schedule
             </p>
-            <h2 className="mt-2 text-3xl font-bold text-gray-900 sm:text-4xl">
+            <h2 className="mt-2 text-3xl font-bold text-foreground sm:text-4xl">
               試験日程
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-gray-500">
+            <p className="mx-auto mt-4 max-w-2xl text-muted">
               2026年度は年3回の検定を予定しています。各回の日程と申込期間は以下のとおりです。
             </p>
           </div>
@@ -224,39 +224,39 @@ export default function HomePage() {
             {schedule.map((s) => (
               <div
                 key={s.id}
-                className="relative overflow-hidden rounded-2xl border border-gray-100 bg-white p-6 shadow-sm transition hover:shadow-md sm:p-8"
+                className="relative overflow-hidden rounded-2xl border border-border-light bg-surface p-6 shadow-sm transition hover:shadow-md sm:p-8"
               >
                 {/* ステータスバッジ */}
                 <span
                   className={`absolute top-4 right-4 rounded-full px-3 py-1 text-xs font-bold ${
                     s.status === "受付中"
-                      ? "bg-green-100 text-green-700"
-                      : "bg-gray-100 text-gray-500"
+                      ? "bg-success-light text-success"
+                      : "bg-badge text-muted"
                   }`}
                 >
                   {s.status}
                 </span>
 
-                <h3 className="text-lg font-bold text-gray-900">{s.name}</h3>
+                <h3 className="text-lg font-bold text-foreground">{s.name}</h3>
 
                 <div className="mt-4 grid gap-4 text-sm sm:grid-cols-2 md:grid-cols-4">
                   <div>
-                    <p className="font-medium text-gray-400">試験日</p>
-                    <p className="mt-1 text-base font-semibold text-gray-800">
+                    <p className="font-medium text-placeholder">試験日</p>
+                    <p className="mt-1 text-base font-semibold text-foreground">
                       {s.examDate}
                     </p>
                   </div>
                   <div>
-                    <p className="font-medium text-gray-400">申込開始</p>
-                    <p className="mt-1 text-gray-700">{s.applyStart}</p>
+                    <p className="font-medium text-placeholder">申込開始</p>
+                    <p className="mt-1 text-foreground-secondary">{s.applyStart}</p>
                   </div>
                   <div>
-                    <p className="font-medium text-gray-400">申込締切</p>
-                    <p className="mt-1 text-gray-700">{s.applyEnd}</p>
+                    <p className="font-medium text-placeholder">申込締切</p>
+                    <p className="mt-1 text-foreground-secondary">{s.applyEnd}</p>
                   </div>
                   <div>
-                    <p className="font-medium text-gray-400">結果発表</p>
-                    <p className="mt-1 text-gray-700">{s.resultDate}</p>
+                    <p className="font-medium text-placeholder">結果発表</p>
+                    <p className="mt-1 text-foreground-secondary">{s.resultDate}</p>
                   </div>
                 </div>
 
@@ -276,32 +276,32 @@ export default function HomePage() {
       </section>
 
       {/* ── よくある質問 ── */}
-      <section id="faq" className="bg-gray-50 py-20 sm:py-28">
+      <section id="faq" className="bg-background-alt py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <p className="text-sm font-semibold tracking-widest text-primary uppercase">
               FAQ
             </p>
-            <h2 className="mt-2 text-3xl font-bold text-gray-900 sm:text-4xl">
+            <h2 className="mt-2 text-3xl font-bold text-foreground sm:text-4xl">
               よくある質問
             </h2>
           </div>
 
-          <div className="mx-auto mt-12 max-w-3xl divide-y divide-gray-200">
+          <div className="mx-auto mt-12 max-w-3xl divide-y divide-border">
             {faqs.map((faq, i) => (
               <details
                 key={i}
                 className="group py-5 [&_summary::-webkit-details-marker]:hidden"
               >
                 <summary className="flex cursor-pointer items-center justify-between gap-4">
-                  <span className="text-base font-semibold text-gray-900">
+                  <span className="text-base font-semibold text-foreground">
                     {faq.q}
                   </span>
-                  <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary transition group-open:rotate-45">
+                  <span className="flex size-7 flex-shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary transition group-open:rotate-45">
                     +
                   </span>
                 </summary>
-                <p className="mt-3 leading-relaxed text-gray-500">
+                <p className="mt-3 leading-relaxed text-muted">
                   {faq.a}
                 </p>
               </details>
@@ -316,7 +316,7 @@ export default function HomePage() {
           <h2 className="text-3xl font-bold text-white sm:text-4xl">
             お子さまの算数力を確かめよう
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-blue-100">
+          <p className="mx-auto mt-4 max-w-xl text-primary-light">
             まずは実力にあった級を選んで、チャレンジしてみましょう。
           </p>
           <ApplyButton

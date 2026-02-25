@@ -48,8 +48,8 @@ export default async function LevelPage({ params }: Props) {
         )} py-16 sm:py-24`}
       >
         {/* ぼかし装飾 */}
-        <div className="absolute -top-20 -right-20 h-80 w-80 rounded-full bg-white/20 blur-3xl" />
-        <div className="absolute -bottom-20 -left-20 h-80 w-80 rounded-full bg-black/5 blur-3xl" />
+        <div className="absolute -top-20 -right-20 size-80 rounded-full bg-white/20 blur-3xl" />
+        <div className="absolute -bottom-20 -left-20 size-80 rounded-full bg-black/5 blur-3xl" />
 
         <div className="relative mx-auto flex max-w-6xl flex-col items-center gap-10 px-4 md:flex-row md:gap-16">
           {/* テキスト */}
@@ -84,9 +84,9 @@ export default async function LevelPage({ params }: Props) {
       </section>
 
       {/* ── 試験形式 ── */}
-      <section className="bg-white py-16 sm:py-20">
+      <section className="bg-surface py-16 sm:py-20">
         <div className="mx-auto max-w-5xl px-4">
-          <h2 className="text-center text-2xl font-bold text-gray-900 sm:text-3xl">
+          <h2 className="text-center text-2xl font-bold text-foreground sm:text-3xl">
             試験形式
           </h2>
 
@@ -102,13 +102,13 @@ export default async function LevelPage({ params }: Props) {
             ].map((item) => (
               <div
                 key={item.label}
-                className="rounded-2xl border border-gray-100 bg-gray-50 p-6 text-center"
+                className="rounded-2xl border border-border-light bg-background-alt p-6 text-center"
               >
                 <span className="text-3xl">{item.icon}</span>
-                <p className="mt-2 text-sm font-medium text-gray-500">
+                <p className="mt-2 text-sm font-medium text-muted">
                   {item.label}
                 </p>
-                <p className="mt-1 text-xl font-bold text-gray-900">
+                <p className="mt-1 text-xl font-bold text-foreground">
                   {item.value}
                 </p>
               </div>
@@ -118,9 +118,9 @@ export default async function LevelPage({ params }: Props) {
       </section>
 
       {/* ── 出題範囲 ── */}
-      <section className="bg-gray-50 py-16 sm:py-20">
+      <section className="bg-background-alt py-16 sm:py-20">
         <div className="mx-auto max-w-5xl px-4">
-          <h2 className="text-center text-2xl font-bold text-gray-900 sm:text-3xl">
+          <h2 className="text-center text-2xl font-bold text-foreground sm:text-3xl">
             出題範囲
           </h2>
 
@@ -128,14 +128,14 @@ export default async function LevelPage({ params }: Props) {
             {data.topics.map((topic, i) => (
               <li
                 key={i}
-                className="flex items-start gap-3 rounded-xl bg-white p-4 shadow-sm"
+                className="flex items-start gap-3 rounded-xl bg-surface p-4 shadow-sm"
               >
                 <span
-                  className={`flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-r ${data.color} text-xs font-bold text-white`}
+                  className={`flex size-7 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-r ${data.color} text-xs font-bold text-white`}
                 >
                   {i + 1}
                 </span>
-                <span className="text-gray-700">{topic}</span>
+                <span className="text-foreground-secondary">{topic}</span>
               </li>
             ))}
           </ul>
@@ -143,9 +143,9 @@ export default async function LevelPage({ params }: Props) {
       </section>
 
       {/* ── 学習のポイント ── */}
-      <section className="bg-white py-16 sm:py-20">
+      <section className="bg-surface py-16 sm:py-20">
         <div className="mx-auto max-w-5xl px-4">
-          <h2 className="text-center text-2xl font-bold text-gray-900 sm:text-3xl">
+          <h2 className="text-center text-2xl font-bold text-foreground sm:text-3xl">
             学習のポイント
           </h2>
 
@@ -153,10 +153,10 @@ export default async function LevelPage({ params }: Props) {
             {data.tips.map((tip, i) => (
               <div
                 key={i}
-                className="rounded-2xl border border-gray-100 bg-gradient-to-br from-gray-50 to-white p-6"
+                className="rounded-2xl border border-border-light bg-gradient-to-br from-background-alt to-surface p-6"
               >
                 <span className="text-3xl">💡</span>
-                <p className="mt-3 text-sm leading-relaxed text-gray-600">
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                   {tip}
                 </p>
               </div>
@@ -166,18 +166,18 @@ export default async function LevelPage({ params }: Props) {
       </section>
 
       {/* ── 前後の級ナビゲーション ── */}
-      <section className="border-t border-gray-200 bg-gray-50 py-12">
+      <section className="border-t border-border bg-background-alt py-12">
         <div className="mx-auto flex max-w-3xl items-center justify-between px-4">
           {next ? (
             <Link
               href={`/levels/${next.id}`}
-              className="group flex items-center gap-2 text-sm font-medium text-gray-600 transition hover:text-primary"
+              className="group flex items-center gap-2 text-sm font-medium text-muted-foreground transition hover:text-primary"
             >
               <span className="text-lg transition group-hover:-translate-x-1">
                 ←
               </span>
               <span>
-                <span className="block text-xs text-gray-400">上の級</span>
+                <span className="block text-xs text-placeholder">上の級</span>
                 {next.label}（{next.target}）
               </span>
             </Link>
@@ -187,7 +187,7 @@ export default async function LevelPage({ params }: Props) {
 
           <Link
             href="/#levels"
-            className="rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-600 transition hover:border-primary hover:text-primary"
+            className="rounded-lg border border-input bg-surface px-4 py-2 text-sm font-medium text-muted-foreground transition hover:border-primary hover:text-primary"
           >
             級一覧へ
           </Link>
@@ -195,10 +195,10 @@ export default async function LevelPage({ params }: Props) {
           {prev ? (
             <Link
               href={`/levels/${prev.id}`}
-              className="group flex items-center gap-2 text-right text-sm font-medium text-gray-600 transition hover:text-primary"
+              className="group flex items-center gap-2 text-right text-sm font-medium text-muted-foreground transition hover:text-primary"
             >
               <span>
-                <span className="block text-xs text-gray-400">下の級</span>
+                <span className="block text-xs text-placeholder">下の級</span>
                 {prev.label}（{prev.target}）
               </span>
               <span className="text-lg transition group-hover:translate-x-1">
@@ -224,7 +224,7 @@ export default async function LevelPage({ params }: Props) {
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <ApplyButton
-              className="rounded-xl bg-white px-8 py-3.5 text-base font-bold text-gray-900 shadow-lg transition hover:-translate-y-0.5 hover:shadow-xl"
+              className="rounded-xl bg-white px-8 py-3.5 text-base font-bold text-foreground shadow-lg transition hover:-translate-y-0.5 hover:shadow-xl"
             >
               検定に申し込む
             </ApplyButton>
