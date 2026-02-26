@@ -64,6 +64,7 @@ module homepageApp 'modules/container-app.bicep' = {
       { name: 'NODE_ENV', value: 'production' }
       { name: 'HOSTNAME', value: '0.0.0.0' }
       { name: 'PORT', value: '3000' }
+      { name: 'APPLICATIONINSIGHTS_ROLE_NAME', value: 'homepage-containerapp' }
       { name: 'APPLICATIONINSIGHTS_CONNECTION_STRING', value: applicationInsights.outputs.connectionString }
       { name: 'NEXT_PUBLIC_APPLICATIONINSIGHTS_CONNECTION_STRING', value: applicationInsights.outputs.connectionString }
     ]
