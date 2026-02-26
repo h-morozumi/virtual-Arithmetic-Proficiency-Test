@@ -67,6 +67,37 @@ http://localhost:3000 で起動します。
 pnpm run build:homepage
 ```
 
+## Docker
+
+### イメージのビルド
+
+モノレポルート（`/`）をビルドコンテキストとして指定します。
+
+```bash
+# プロジェクトルートで実行
+docker build -f apps/homepage/Dockerfile -t homepage .
+```
+
+### コンテナの起動
+
+```bash
+docker run -p 3000:3000 homepage
+```
+
+http://localhost:3000 でアクセスできます。
+
+バックグラウンドで起動する場合:
+
+```bash
+docker run -d -p 3000:3000 --name homepage homepage
+```
+
+### コンテナの停止
+
+```bash
+docker stop homepage
+```
+
 ## テスト用アカウント
 
 | ユーザー ID | パスワード |
