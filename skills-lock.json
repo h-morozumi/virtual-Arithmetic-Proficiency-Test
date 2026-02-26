@@ -1,6 +1,11 @@
 {
   "version": 1,
   "skills": {
+    "microsoft-docs": {
+      "source": "microsoftdocs/mcp",
+      "sourceType": "github",
+      "computedHash": "eded7d836b35cc20db69fd951cc89db269141abf8af12f2d1b6aa2ead1cc6adc"
+    },
     "react-expert": {
       "source": "jeffallan/claude-skills",
       "sourceType": "github",
@@ -15,6 +20,11 @@
       "source": "vercel-labs/agent-skills",
       "sourceType": "github",
       "computedHash": "4365be772fd3b41994a72ad478472c6d680678e7f3859860ab010e9c46e48ee0"
+    },
+    "writing-bicep-templates": {
+      "source": "microsoft-foundry/foundry-agent-webapp",
+      "sourceType": "github",
+      "computedHash": "cc5ca38e54e48a5021f3259cac4c5851a2620be7ef42058e389a8e90a8dbae8e"
     }
   }
 }
