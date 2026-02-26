@@ -13,6 +13,9 @@ param location string = resourceGroup().location
 @description('GitHub Container Registry owner (GitHub user or org)')
 param ghcrOwner string
 
+@description('Container image tag to deploy')
+param ghcrImageTag string = 'latest'
+
 // ============================================================================
 // Variables
 // ============================================================================
@@ -58,7 +61,7 @@ module homepageApp 'modules/container-app.bicep' = {
     name: '${abbrs.containerApp}homepage-${resourceToken}'
     location: location
     containerAppsEnvironmentId: containerAppsEnvironment.outputs.id
-    containerImage: '${ghcrLoginServer}/${ghcrImageName}:latest'
+    containerImage: '${ghcrLoginServer}/${ghcrImageName}:${ghcrImageTag}'
     targetPort: 3000
     env: [
       { name: 'NODE_ENV', value: 'production' }
