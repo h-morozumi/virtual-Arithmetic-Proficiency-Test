@@ -33,11 +33,14 @@ COPY --from=builder /app/apps/homepage/.next/standalone ./
 COPY --from=builder /app/apps/homepage/.next/static ./apps/homepage/.next/static
 # Copy public assets
 COPY --from=builder /app/apps/homepage/public ./apps/homepage/public
+# Copy Application Insights preload script
+COPY apps/homepage/appinsights.cjs ./appinsights.cjs
 
 USER nextjs
 
 EXPOSE 3000
 ENV PORT=3000
 ENV HOSTNAME="0.0.0.0"
+ENV NODE_OPTIONS="--require=./appinsights.cjs"
 
 CMD ["node", "apps/homepage/server.js"]

@@ -1,7 +1,11 @@
+declare global {
+  var __APPINSIGHTS_INITIALIZED: boolean | undefined;
+}
+
 let isInitialized = false;
 
 export function initServerAppInsights() {
-  if (isInitialized) {
+  if (isInitialized || globalThis.__APPINSIGHTS_INITIALIZED) {
     return;
   }
 
@@ -44,6 +48,7 @@ export function initServerAppInsights() {
     });
 
     isInitialized = true;
+    globalThis.__APPINSIGHTS_INITIALIZED = true;
     console.log("Application Insights initialized (server-side)");
   } catch (error) {
     console.warn("Application Insights initialization failed.", error);
