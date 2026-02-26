@@ -7,6 +7,9 @@ permissions:
   id-token: write
   contents: read
 
+env:
+  RESOURCEGROUP: ${{ vars.RESOURCEGROUP }}
+
 jobs:
   azure-login:
     runs-on: ubuntu-latest
@@ -23,6 +26,9 @@ jobs:
 
       - name: Show subscription details
         run: az account show
+
+      - name: Show resource group name
+        run: echo "RESOURCEGROUP=${{ env.RESOURCEGROUP }}"
 
       - name: List resource groups
         run: az group list --output table
