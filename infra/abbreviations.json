@@ -1,0 +1,7 @@
+{
+  "applicationInsights": "appi-",
+  "containerApp": "ca-",
+  "containerAppsEnvironment": "cae-",
+  "logAnalyticsWorkspace": "log-",
+  "resourceGroup": "rg-"
+}

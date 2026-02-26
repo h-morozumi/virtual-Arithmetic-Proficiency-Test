@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { AuthProvider } from "@/contexts/AuthContext";
+import { AppInsightsProvider } from "@/components/AppInsightsProvider";
 
 export const metadata: Metadata = {
   title: "日本子供算数検定 | 公益財団法人",
@@ -16,7 +17,11 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body className="font-sans text-foreground antialiased">
-        <AuthProvider>{children}</AuthProvider>
+        <AppInsightsProvider
+          connectionString={process.env.NEXT_PUBLIC_APPLICATIONINSIGHTS_CONNECTION_STRING}
+        >
+          <AuthProvider>{children}</AuthProvider>
+        </AppInsightsProvider>
       </body>
     </html>
   );

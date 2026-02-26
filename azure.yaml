@@ -1,0 +1,11 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Azure/azure-dev/main/schemas/v1.0/azure.yaml.json
+
+name: virtual-arithmetic-proficiency-test
+metadata:
+  template: azd-init@1.23.6
+
+infra:
+  provider: bicep
+  path: infra
+  module: main
+
